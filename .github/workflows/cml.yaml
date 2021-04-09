@@ -13,5 +13,11 @@ jobs:
           pip install -r requirements.txt
           python train.py
           
-          echo "Wine's model metrics"
-          cat metrics.txt
+          echo "## WINE's MODEL METRICS" >> report.md
+          cat metrics.txt >> report.md
+          
+          echo "## DATA Visualization" >> report.md
+          cml-public feature_importance.png --md >> report.md
+          cml-public residuals.png --md >> report.md
+          
+          cml-send-comment report.md
