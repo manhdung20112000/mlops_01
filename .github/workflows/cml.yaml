@@ -13,7 +13,7 @@ jobs:
           pip install -r requirements.txt
           python train.py
           
-          echo "## WINE's MODEL METRICS: " >> report.md
+          echo "## WINE's MODEL METRICS AFTER UPDATE DEPTH: " >> report.md
           cat metrics.txt >> report.md
           
           echo "## DATA VISUALIZATION: " >> report.md
